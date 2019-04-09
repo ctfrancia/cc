@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { Injectable } from '@angular/core';
+import { 
+  Component, 
+  Injectable 
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Joke } from './joke';
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,5 +40,6 @@ export class AppComponent {
   };
   removeFromFavourites(id:number){
     this.favourites = this.favourites.filter(joke => joke.id !== id);
+    localStorage.setItem('favourites', JSON.stringify(this.favourites) )
   };
 };
