@@ -1,0 +1,18 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+    <button (click)="getJokes()">Get joke</button>
+    <div>
+      <p>{{joke}}</p>
+      <button (click)="addToFavourites(joke)">Add to favourites</button>
+    </div>
+    <ul>
+      <h4>Favourites</h4>
+        <li *ngFor="let favourite of favourites ">{{favourite.joke}} 
+        <button (click)="removeFromFavourites(favourite.id)">Remove</button>
+      </li>
+    </ul>
+</div>
+
