@@ -2,16 +2,20 @@
 
 ## Instructions
 
-For the coding challenge it is going to be a very short one. The goal is just to see how you can pick up new technologies.
+For the coding challenge it is going to be a very short one.
 
-Creating a full stack application we would like a you to create a fun application that makes a get request to the Chuck Norris API (http:*//api.icndb.com/jokes/random*) and based on the joke add it to your favorites. How you design it or organize it is up to you but these are the requirements that must be fulfilled:
+Creating a full stack application we would like a you to create a fun application that makes a get request to the Chuck Norris API (http:*//api.icndb.com/jokes/random*) and based on the joke add it to your favorites, as well as the ability to remove it. How you design it and organize it is up to you but these are the requirements that must be fulfilled:
+- Click a button that shows a joke
+- Have the option to add the joke to your favorite jokes list, and be able to redily see the list of favorited jokes
+- Have the option to remove a joke from your list
+- Your list must not contain any duplicates
 
 ## Getting Started
 
 - Fork this repo
-- install all your dependencies
+- Install all your dependencies
 - Try and follow the best git flow you can with semantic commits
-- when done make a pull request
+- When done make a pull request
 
 Depending on your famility with Angular I would suggest doing the tutorial on the Angular website(Tour of Heroes) as it has the best documentation I've seen and it does a really good job at getting you familiar with the framework.
 
@@ -36,4 +40,4 @@ We understand that time is important, which is why we would like for you to be a
 - Use Ionic 4 (extra extra credit: Ionic)
 - Use Koa as a backend framework, we use this framework for micro services
 - Write tests (with any framework, however, we use Jest)
-- Data persistence, either with a JSON file or local storage
+- Data persistence either with a JSON file, local storage, SQLite
