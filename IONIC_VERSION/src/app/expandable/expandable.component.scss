@@ -1,0 +1,12 @@
+.expand-wrapper{
+    overflow: hidden;
+    max-height: 1.2rem;
+    width:80%;
+    padding: 0 .5rem;;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+}
+.expanded{
+    white-space:normal;
+    max-height: 100rem;
+    transition: max-height 1s ease-in-out;
+}
