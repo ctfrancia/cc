@@ -1,0 +1,7 @@
+{
+  "name": "chuk-norris-jokes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

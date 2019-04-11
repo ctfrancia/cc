@@ -1,0 +1,40 @@
+<header 
+    [title]="title">
+</header>
+<ion-content>
+    <ion-card [class.hide]="!showJoke" class="show">
+        <joke-container 
+            [joke]="joke" 
+            [error]="error" 
+            [showJoke]="showJoke">
+        </joke-container>
+        <ion-button class="fav-btn" color="outline" (click)="addToFavourites(joke)">
+            <ion-icon name="star"></ion-icon>
+        </ion-button>
+        <ion-button color="outline" class="next-btn" (click)="getJokes()">
+            <ion-icon name="skip-forward"></ion-icon>
+        </ion-button>
+    </ion-card>
+    <h2 class="center">Favourites</h2>
+    <ion-list>
+        <ion-item-sliding *ngFor="let favourite of favourites ">
+            <ion-item class="fav-item">
+                <expandable [expanded]="favourite.showDetails" [content]="favourite.joke">
+                </expandable>
+                <div color="light" class="toogle-btn" (click)="toggleShowDetails(favourite.id)">
+                    <ion-icon name="add" *ngIf="!favourite.showDetails"></ion-icon>
+                    <ion-icon name="remove" *ngIf="favourite.showDetails"></ion-icon>
+                </div>
+                <button class="btn-delete" ion-button (click)="removeFromFavourites(favourite.id)">
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+                <span id="{{favourite.id}}"></span>
+            </ion-item>
+            <ion-item-options side="end">
+                <button class="btn-delete" ion-button (click)="removeFromFavourites(favourite.id)">
+                    <ion-icon name="trash"></ion-icon>
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

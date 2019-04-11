@@ -6,6 +6,6 @@ module.exports = async (req, res) => {
         const resultJson =  await result.json();
         res.status(200).send(resultJson);
     } catch (error) {
-        res.send({error})
+        res.status(500).send({message:'Internal server error ...'})
     };
 };
