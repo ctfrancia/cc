@@ -73,15 +73,10 @@ export class HomePage {
     };
   };
   toggleShowDetails(id:number){
-    //this.scrollOnExpand(id);
     const index = this.favourites.findIndex(ele => ele.id ===id);
     index > -1 ? 
       this.favourites[index].showDetails = !this.favourites[index].showDetails
     : null;
   }
-  // scrollOnExpand(id:number){
-  //   let scrollItem = document.getElementById(String(id));
-  //   scrollItem.scrollIntoView(true);
-  // }
 };
 
