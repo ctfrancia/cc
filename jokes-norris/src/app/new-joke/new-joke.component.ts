@@ -15,4 +15,8 @@ export class NewJokeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  toggleFavoriteJoke() {
+    console.log('chuck');
+  }
 }

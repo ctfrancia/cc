@@ -1,10 +1,12 @@
 <div class="joke-container">
-  <label id="favorite">
-    <span class="star">💣💥</span>
-    <input type="checkbox" id="favorite" />
-  </label>
-  <p>
-    {{ joke.joke }}
-  </p>
+  <div class="favorite-check">
+    <input
+      type="checkbox"
+      name="favorite-check"
+      id="favorite"
+      (input)="toggleFavoriteJoke()"
+    />
+    <label for="favorite"> {{ joke.joke }} </label>
+  </div>
 </div>
 <button>👊🏼another</button>
