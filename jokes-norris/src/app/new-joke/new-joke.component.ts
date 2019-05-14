@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Joke } from '../Joke';
+import { Joke } from '../models/joke';
+import { JokesService } from '../services/jokes.service';
 @Component({
   selector: 'app-new-joke',
   templateUrl: './new-joke.component.html',
@@ -12,11 +13,11 @@ export class NewJokeComponent implements OnInit {
     categories: [],
   };
 
-  constructor() {}
+  constructor(private jokesService: JokesService) {}
 
   ngOnInit() {}
 
   toggleFavoriteJoke() {
-    console.log('chuck');
+    this.jokesService.getNewJoke();
   }
 }
