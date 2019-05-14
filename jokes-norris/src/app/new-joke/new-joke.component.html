@@ -4,9 +4,10 @@
     <div class="favorite-check">
       <input
         type="checkbox"
+        [checked]="checkFavorite(joke)"
         name="favorite-check"
         id="favorite"
-        (input)="toggleFavoriteJoke()"
+        (input)="toggleFavoriteJoke(joke, $event.target.checked)"
       />
       <label for="favorite"> {{ joke.value.joke }} </label>
     </div>

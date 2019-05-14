@@ -13,13 +13,21 @@ export class NewJokeComponent implements OnInit {
 
   ngOnInit() {}
 
-  getJoke() {
+  getJoke(): void {
     this.jokesService.getNewJoke().subscribe(joke => {
       this.joke = joke;
     });
   }
 
-  toggleFavoriteJoke() {
-    console.log('favorite joke');
+  toggleFavoriteJoke(joke: Joke, checked: boolean): void {
+    if (checked) {
+      this.jokesService.addFavorite(joke);
+    } else {
+      this.jokesService.removeFavorite(joke.value.id);
+    }
+  }
+
+  checkFavorite(joke: Joke): boolean {
+    return this.jokesService.checkFavorites(joke);
   }
 }
