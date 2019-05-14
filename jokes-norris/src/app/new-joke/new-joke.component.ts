@@ -7,17 +7,19 @@ import { JokesService } from '../services/jokes.service';
   styleUrls: ['./new-joke.component.css'],
 })
 export class NewJokeComponent implements OnInit {
-  joke: Joke = {
-    id: 23,
-    joke: 'Chuck Norris is the reason why Waldo is hiding',
-    categories: [],
-  };
+  joke: Joke;
 
   constructor(private jokesService: JokesService) {}
 
   ngOnInit() {}
 
+  getJoke() {
+    this.jokesService.getNewJoke().subscribe(joke => {
+      this.joke = joke;
+    });
+  }
+
   toggleFavoriteJoke() {
-    this.jokesService.getNewJoke();
+    console.log('favorite joke');
   }
 }

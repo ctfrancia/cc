@@ -3,6 +3,10 @@
   justify-content: center;
 }
 
+.new-joke-button {
+  font-size: 3rem;
+}
+
 .favorite-check input[type='checkbox'] + label:before {
   content: '💣';
 }

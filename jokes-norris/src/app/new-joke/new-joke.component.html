@@ -1,12 +1,24 @@
-<div class="joke-container">
-  <div class="favorite-check">
-    <input
-      type="checkbox"
-      name="favorite-check"
-      id="favorite"
-      (input)="toggleFavoriteJoke()"
-    />
-    <label for="favorite"> {{ joke.joke }} </label>
+<button (click)="getJoke()" class="new-joke-button">👊🏼</button>
+<ng-container *ngIf="joke; else explanation">
+  <div class="joke-container">
+    <div class="favorite-check">
+      <input
+        type="checkbox"
+        name="favorite-check"
+        id="favorite"
+        (input)="toggleFavoriteJoke()"
+      />
+      <label for="favorite"> {{ joke.value.joke }} </label>
+    </div>
   </div>
-</div>
-<button>👊🏼another</button>
+</ng-container>
+<ng-template #explanation>
+  <div>
+    <p>
+      Punch up to get a new joke.
+    </p>
+    <p>
+      Hit the 💣 to make it 💥 and add it to your favorites!
+    </p>
+  </div>
+</ng-template>
