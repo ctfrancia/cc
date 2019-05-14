@@ -2,3 +2,8 @@
 .star {
   font-size: 1.2em;
 }
+
+.fist:hover,
+.star:hover {
+  font-size: 2em;
+}
