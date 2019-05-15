@@ -5,3 +5,17 @@ body {
   text-align: center;
   font-size: 16px;
 }
+
+button,
+input {
+  border: none;
+  cursor: grabbing;
+}
+
+button:focus {
+  outline: none;
+}
+
+.star {
+  cursor: grab;
+}
