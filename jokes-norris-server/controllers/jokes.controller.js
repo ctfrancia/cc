@@ -1,7 +1,7 @@
 const request = require('request');
 
 module.exports.newJoke = (req, res) => {
-  request('http://api.icndb.com/jokes/random', (error, response, body) => {
+  request(process.env.JOKES_URL, (error, response, body) => {
     if (!error) {
       body = JSON.parse(body);
       const joke = body.value.joke.replace(/&quot;/g, '"');

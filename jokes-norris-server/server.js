@@ -4,15 +4,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes/routes');
 
-const port = process.env.PORT || 5000;
-const filePath = '../jokes-norris';
+require('dotenv').config();
 
-app.use('/', express.static(filePath));
+const port = process.env.PORT || 5000;
 
 app
   .use(
     cors({
-      origin: 'http://localhost:4200',
+      origin: process.env.CLIENT_URL,
       methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     }),
   )
