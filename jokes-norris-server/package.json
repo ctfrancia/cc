@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "name": "jokes-norris-server",
+  "version": "1.0.0",
+  "description": "coding challenge with chuck norris jokes",
+  "main": "server.js",
+  "author": "carmelogustavo@gmail.com",
+  "license": "MIT",
+  "private": false
+}
