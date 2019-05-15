@@ -1,4 +1,4 @@
 export class Joke {
-  type: string;
-  value: { id: number; joke: string; categories: [] };
+  id: number;
+  joke: string;
 }

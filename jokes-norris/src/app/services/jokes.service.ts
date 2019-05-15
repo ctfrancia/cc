@@ -26,14 +26,17 @@ export class JokesService {
   }
 
   removeFavorite(id: number) {
-    this.favorites = this.favorites.filter(joke => joke.value.id !== id);
+    this.favorites = this.favorites.filter(joke => joke.id !== id);
   }
 
   checkFavorites(joke: Joke): boolean {
-    return this.favorites.includes(joke);
+    const [checker] = this.favorites.filter(
+      favorite => favorite.id === joke.id,
+    );
+    return checker && true;
   }
 
   getNewJoke() {
-    return this.http.get<Joke>('http://api.icndb.com/jokes/random');
+    return this.http.get<Joke>('http://localhost:5000/');
   }
 }

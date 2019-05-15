@@ -23,7 +23,7 @@ export class NewJokeComponent implements OnInit {
     if (checked) {
       this.jokesService.addFavorite(joke);
     } else {
-      this.jokesService.removeFavorite(joke.value.id);
+      this.jokesService.removeFavorite(joke.id);
     }
   }
 

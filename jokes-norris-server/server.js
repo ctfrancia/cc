@@ -23,8 +23,12 @@ app.get('/', (req, res) => {
   request('http://api.icndb.com/jokes/random', (error, response, body) => {
     if (!error) {
       body = JSON.parse(body);
-      const joke = { id: body.value.id, joke: body.value.joke };
-      res.status(200).send(joke);
+      const joke = body.value.joke.replace(/&quot;/g, '"');
+      const data = {
+        joke,
+        id: body.value.id,
+      };
+      res.status(200).send(data);
     } else {
       res
         .status(403)
