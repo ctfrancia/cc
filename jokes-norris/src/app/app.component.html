@@ -1,8 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <h1 class="title">
-    <span class="fist">👊🏼</span>{{ title | uppercase }}
-    <span class="star">💥</span>
+    {{ title | uppercase }}
   </h1>
+  <button class="star">💥</button>
   <app-new-joke></app-new-joke>
+  <button (click)="openFavorites()">💥</button>
 </div>
