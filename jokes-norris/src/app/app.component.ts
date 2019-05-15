@@ -13,11 +13,7 @@ export class AppComponent {
 
   openFavorites(): void {
     const favoritesRef = this.dialog.open(FavoritesJokesComponent, {
-      width: '250px',
-    });
-
-    favoritesRef.afterClosed().subscribe(result => {
-      console.log('on our way');
+      width: '90vw',
     });
   }
 }

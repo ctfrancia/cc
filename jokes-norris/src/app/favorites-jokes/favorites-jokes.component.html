@@ -1,5 +1,8 @@
 <mat-dialog-content>
-  <div *ngFor="let joke of jokeService.favorites$ | async">
-    {{ joke.value.id }}
+  <div *ngFor="let joke of jokeService.favorites$ | async; last as isLast">
+    {{ joke.value.joke }}
+    <ng-container *ngIf="!isLast">
+      <mat-divider></mat-divider>
+    </ng-container>
   </div>
 </mat-dialog-content>

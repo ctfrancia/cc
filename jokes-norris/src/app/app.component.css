@@ -7,3 +7,8 @@
 .star:hover {
   font-size: 2em;
 }
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
