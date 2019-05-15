@@ -7,7 +7,7 @@ import { JokesService } from '../services/jokes.service';
   styleUrls: ['./new-joke.component.css'],
 })
 export class NewJokeComponent implements OnInit {
-  joke: Joke;
+  newJoke: Joke;
 
   constructor(private jokesService: JokesService) {}
 
@@ -15,19 +15,7 @@ export class NewJokeComponent implements OnInit {
 
   getJoke(): void {
     this.jokesService.getNewJoke().subscribe(joke => {
-      this.joke = joke;
+      this.newJoke = joke;
     });
-  }
-
-  toggleFavoriteJoke(joke: Joke, checked: boolean): void {
-    if (checked) {
-      this.jokesService.addFavorite(joke);
-    } else {
-      this.jokesService.removeFavorite(joke.id);
-    }
-  }
-
-  checkFavorite(joke: Joke): boolean {
-    return this.jokesService.checkFavorites(joke);
   }
 }

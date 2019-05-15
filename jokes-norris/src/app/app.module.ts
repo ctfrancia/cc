@@ -7,9 +7,10 @@ import { MatDividerModule } from '@angular/material/divider';
 import { AppComponent } from './app.component';
 import { NewJokeComponent } from './new-joke/new-joke.component';
 import { FavoritesJokesComponent } from './favorites-jokes/favorites-jokes.component';
+import { SingleJokeComponent } from './single-joke/single-joke.component';
 
 @NgModule({
-  declarations: [AppComponent, NewJokeComponent, FavoritesJokesComponent],
+  declarations: [AppComponent, NewJokeComponent, FavoritesJokesComponent, SingleJokeComponent],
   imports: [
     BrowserModule,
     HttpClientModule,

@@ -1,17 +1,6 @@
 <button (click)="getJoke()" class="new-joke-button">👊🏼</button>
-<ng-container *ngIf="joke; else explanation">
-  <div class="joke-container">
-    <div class="favorite-check">
-      <input
-        type="checkbox"
-        [checked]="checkFavorite(joke)"
-        name="favorite-check"
-        id="favorite"
-        (input)="toggleFavoriteJoke(joke, $event.target.checked)"
-      />
-      <label for="favorite"> {{ joke.joke }} </label>
-    </div>
-  </div>
+<ng-container *ngIf="newJoke; else explanation">
+  <app-single-joke [joke]="newJoke"></app-single-joke>
 </ng-container>
 <ng-template #explanation>
   <div>

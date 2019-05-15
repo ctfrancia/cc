@@ -37,6 +37,6 @@ export class JokesService {
   }
 
   getNewJoke() {
-    return this.http.get<Joke>('http://localhost:5000/');
+    return this.http.get<Joke>('http://localhost:5000/jokes');
   }
 }
