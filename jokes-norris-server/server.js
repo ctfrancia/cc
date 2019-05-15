@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const request = require('request');
+const routes = require('./routes/routes');
 
 const port = process.env.PORT || 5000;
 const filePath = '../jokes-norris';
@@ -19,23 +19,7 @@ app
   .use(bodyParser.json())
   .use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', (req, res) => {
-  request('http://api.icndb.com/jokes/random', (error, response, body) => {
-    if (!error) {
-      body = JSON.parse(body);
-      const joke = body.value.joke.replace(/&quot;/g, '"');
-      const data = {
-        joke,
-        id: body.value.id,
-      };
-      res.status(200).send(data);
-    } else {
-      res
-        .status(403)
-        .send({ message: "chuck Norris didn't thousg that was funny" });
-    }
-  });
-});
+routes(app);
 
 app.listen(port, () =>
   console.log(`chuck norris is listenning on port ${port}`),

@@ -1,27 +1,9 @@
 # JokesNorris
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
+Jokes Norris is an Angular app to check randomly and select your favorites Chuck Norris jokes.
 
-## Development server
+To use the app clone the repository, install the dependencies with `npm` or `yarn`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You will need the server located here []().
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+After all this you can start the aplication with `ng start`.
