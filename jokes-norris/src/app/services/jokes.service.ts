@@ -39,4 +39,24 @@ export class JokesService {
   getNewJoke() {
     return this.http.get<Joke>('http://localhost:5000/jokes');
   }
+
+  getFavoritesFromLocal() {
+    try {
+      const storedFavorites = localStorage.getItem('favorites');
+      if (storedFavorites === null) {
+        return undefined;
+      }
+      this.favorites = JSON.parse(storedFavorites);
+    } catch (err) {
+      return undefined;
+    }
+  }
+
+  setFavoritesToLocal() {
+    try {
+      localStorage.setItem('favorites', JSON.stringify(this.favorites));
+    } catch (err) {
+      console.error('Unable to save the state in local storage');
+    }
+  }
 }

@@ -9,20 +9,18 @@ import { JokesService } from '../services/jokes.service';
 })
 export class SingleJokeComponent implements OnInit {
   @Input() joke: Joke;
-  @Input() id: number;
 
   constructor(private jokesService: JokesService) {}
 
   ngOnInit() {}
 
   toggleFavoriteJoke(joke: Joke, event: any): void {
-    console.log(event);
-
     if (event.target.checked) {
       this.jokesService.addFavorite(joke);
     } else {
       this.jokesService.removeFavorite(joke.id);
     }
+    this.jokesService.setFavoritesToLocal();
   }
 
   checkFavorite(joke: Joke): boolean {

@@ -1,8 +1,15 @@
 <mat-dialog-content>
-  <div *ngFor="let joke of jokeService.favorites$ | async; last as isLast">
-    <app-single-joke [joke]="joke"></app-single-joke>
-    <ng-container *ngIf="!isLast">
-      <mat-divider></mat-divider>
-    </ng-container>
-  </div>
+  <ng-container *ngIf="jokeService.favorites.length > 0; else noJoke">
+    <div *ngFor="let joke of jokeService.favorites$ | async; last as isLast">
+      <app-single-joke [joke]="joke"></app-single-joke>
+      <ng-container *ngIf="!isLast">
+        <mat-divider></mat-divider>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #noJoke>
+    <p>
+      Only Chuck Norris can make you cry (of laughter) without a joke
+    </p>
+  </ng-template>
 </mat-dialog-content>
