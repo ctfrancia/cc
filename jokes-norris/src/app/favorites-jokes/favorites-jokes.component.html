@@ -1,3 +1,5 @@
-<div *ngFor="let joke of jokeService.favorites$ | async">
-  {{ joke.value.id }}
-</div>
+<mat-dialog-content>
+  <div *ngFor="let joke of jokeService.favorites$ | async">
+    {{ joke.value.id }}
+  </div>
+</mat-dialog-content>
