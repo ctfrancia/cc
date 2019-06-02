@@ -1,0 +1,14 @@
+<button (click)="getJoke()" class="new-joke-button">👊🏼</button>
+<ng-container *ngIf="newJoke; else explanation">
+  <app-single-joke [joke]="newJoke"></app-single-joke>
+</ng-container>
+<ng-template #explanation>
+  <div>
+    <p>
+      Punch up to get a new joke.
+    </p>
+    <p>
+      Hit the 💣 to make it 💥 and add it to your favorites!
+    </p>
+  </div>
+</ng-template>

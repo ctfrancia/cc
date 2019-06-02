@@ -1,0 +1,12 @@
+<div class="joke-container">
+  <div class="favorite-check">
+    <input
+      type="checkbox"
+      [checked]="checkFavorite(joke)"
+      [name]="joke.id"
+      [id]="joke.id"
+      (input)="toggleFavoriteJoke(joke, $event)"
+    />
+    <label [for]="joke.id"> {{ joke.joke }} </label>
+  </div>
+</div>

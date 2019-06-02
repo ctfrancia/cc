@@ -1,0 +1,13 @@
+.fist,
+.star {
+  font-size: 2em;
+}
+
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+
+.note {
+  font-size: 0.4em;
+}

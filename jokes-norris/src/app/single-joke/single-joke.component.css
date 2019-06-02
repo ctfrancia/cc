@@ -1,0 +1,14 @@
+.joke-container {
+  display: flex;
+  justify-content: center;
+}
+
+.favorite-check input[type='checkbox'] + label:before {
+  content: '💣';
+}
+.favorite-check input[type='checkbox']:checked + label:before {
+  content: '💥';
+}
+.favorite-check input[type='checkbox'] {
+  display: none;
+}
