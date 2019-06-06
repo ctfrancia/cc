@@ -1,0 +1,11 @@
+button {
+    padding: 10px;
+    border-radius: 20px;
+}
+.opsButton{
+
+    padding: 5px;
+    border-radius: 20px;
+    background: red;
+
+}

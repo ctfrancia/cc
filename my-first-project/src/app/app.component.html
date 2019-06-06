@@ -1,0 +1,24 @@
+
+<div style="text-align:center">
+  <h1>
+    {{chuckNorris}}
+  </h1>
+</div>
+<div> 
+<button (click)="onClickGenerate()">New incredible fact!</button>
+</div>
+
+<ul >
+      {{chuckList.joke}} <button class='opsButton' (click)="onClickFavorite()">Favorite!</button>
+  </ul>
+  <div>
+
+    <ul>
+        <li *ngFor="let key of favsList | keyvalue">
+            {{favsList[key.key].Joke}} <button class='opsButton' (click)="onClickDelete(key)">Delete!</button>
+        </li> 
+
+    </ul>
+
+  </div>
+<router-outlet></router-outlet>
