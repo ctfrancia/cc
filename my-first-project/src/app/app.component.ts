@@ -11,6 +11,7 @@ export class AppComponent {
   favsList = []
 
   ngOnInit(){
+    this.onClickGenerate()
     this.showFavs()
   }
 
@@ -40,10 +41,9 @@ export class AppComponent {
         return res.json()
     })
     .then((data) => {
-        this.chuckList = {id:data.value.id,joke:data.value.joke}
+        this.chuckList = {id:data.value.id,joke:data.value.joke.split('&quot;').join('"')}
         console.log(data) 
         console.log('after stuff', this.chuckList) 
-        this.ngOnInit()
     }
     ).catch(function (err) {
         console.error(err)
@@ -65,10 +65,10 @@ export class AppComponent {
         }
       }).then(res => res.json())
       .then(response => {
-        this.ngOnInit()
+        this.showFavs()
         console.log('Success:', JSON.stringify(response))}
         )
-      .catch(error => console.error('Error:', error))
+      .catch(error => alert('Cannot add again the same favorite, two much awesomeness!'))
 
       
       console.log('got here to create a favorite')
@@ -90,7 +90,7 @@ export class AppComponent {
         }
       }).then(res => res.json())
       .then(response => {
-        this.ngOnInit()
+        this.showFavs()
         console.log('Success:', JSON.stringify(response))}
         )
       .catch(error => console.error('Error:', error));

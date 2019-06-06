@@ -13,18 +13,26 @@ class FactsController {
                 res.send({e})
             }
         }
-        // POST ADD ONE
+        // POST ADD ONE -------------> fix &quot and not allow duplicates
         async insert (req, res) {
             let { id, joke } = req.body;
 
-            try{
-                const done = await facts.create({Id:id, Joke:joke });
-                console.log(done)
-                res.send(done)
+            if (await facts.findOne({Id:id}) !== null){
+                console.log('found something')
+                res.send('fact already there')
+            } else {
+                try{
+                    const done = await facts.create({Id:id, Joke:joke.split('&quot;').join('"') });
+                    console.log(done)
+                    res.send(done)
+                }
+                catch(e){
+                    res.send({e})
+                }
+                console.log('nope, not found')
             }
-            catch(e){
-                res.send({e})
-            }
+
+            
         }
 
     // DELETE FACT

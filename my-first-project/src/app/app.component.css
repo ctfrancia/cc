@@ -1,6 +1,11 @@
-button {
+
+
+.majorButton{
     padding: 10px;
     border-radius: 20px;
+margin-left: 35%
+
+
 }
 .opsButton{
 
