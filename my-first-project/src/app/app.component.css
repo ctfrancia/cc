@@ -1,0 +1,14 @@
+.majorButton{
+    padding: 10px;
+    border-radius: 20px;
+    opacity: 0.7;
+    background: transparent;
+    margin-left: 45%;
+    margin-right: 45%;
+}
+.opsButton{
+    padding: 5px;
+    border-radius: 20px;
+    opacity: 0.7;
+    background: transparent;
+}
